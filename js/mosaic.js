@@ -39,7 +39,7 @@ Mosaic.Renderer = function(imageData, container) {
   // Make the mosaic at least as wide as the image (and a multiple of the image tile width).
   mosaic.style.width = Math.ceil(imageData.width / TILE_WIDTH) * TILE_WIDTH + 'px';
   
-  // Create an array to store the HTML for each rows.
+  // Create an array to store the HTML for each row.
   var rows = new Array(Math.ceil(imageData.height / TILE_HEIGHT));
   var nextLoadRowIndex = 0;
   var nextRenderRowIndex = 0;
@@ -61,7 +61,7 @@ Mosaic.Renderer = function(imageData, container) {
     }
   }
 
-  // Add a single row of tiles, based on an array of colors
+  // Add a single row of tiles, based on an array of colors.
   function addRow(colors) {
 
     var thisRowIndex = nextLoadRowIndex;
