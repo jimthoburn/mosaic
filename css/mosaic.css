@@ -1,0 +1,134 @@
+
+  body {
+    font: 100%/1.5 "Helvetica Neue", Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(242, 242, 242);
+  }
+
+  /* Scale the header to fit the available width */
+  h1 {
+    margin: 0;
+    padding-bottom: 33.89830508%; /* 240 / 708 */
+    position: relative;
+  }
+  h1 svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Form */
+  form {
+    text-align: center;
+    padding: 1.5em 1.5em 3em;
+    position: relative;
+  }
+  form p {
+    margin-top: 3em;
+    margin-bottom: 0;
+  }
+  label span {
+    font-weight: bold;
+    margin: 0.75em;
+    display: inline-block;
+  }
+  label span:after {
+    content: ":";
+  }
+  label br {
+    display: none;
+  }
+  input {
+    border: 1px solid rgba(40, 198, 204, 0.4);
+    border-radius: 0.25em;
+    padding: 0.75em;
+    font-size: inherit;
+    box-sizing: border-box;
+  }
+
+  /* Indicate that the form is a drop target if the user is dragging an image over the form. */
+  form.dragover::after {
+    content: "Drop image here";
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-size: 3em;
+  }
+
+  /* Button */
+  button {
+    display: inline-block;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: inherit;
+    font-style: inherit;
+    padding: 0.75em 1.5em;
+    background-color: #28c6cc;
+    color: white;
+    border: 1px solid #28c6cc;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    border-radius: 0.25em;
+    vertical-align: middle;
+    margin: 0.75em;
+  }
+  button:hover,
+  button:active,
+  button:focus {
+    background-color: black;
+    border-color: black;
+    color: white;
+  }
+
+  /* Hide the button, if the JavaScript is working */
+  form.scripted button {
+    position: absolute;
+    left: -9999px;
+  }
+
+  /* Mosaic */
+  .mosaic {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+  }
+
+  /* Center the mosaic */
+  .mosaic > div {
+    clear: both;
+    margin: 3em auto;
+  }
+
+  /* Arrange the SVG images side by side */
+  .mosaic > div:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .mosaic svg {
+    display: block;
+    float: left;
+  }
+
+  /* Fade the tiles in as they appear */
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .mosaic svg {
+    animation: fade-in 0.4s both;
+  }

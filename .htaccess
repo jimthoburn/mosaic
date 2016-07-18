@@ -1,0 +1,10 @@
+
+AddHandler php5-script .php
+
+Options +FollowSymLinks
+RewriteEngine On
+
+# http://www.addedbytes.com/articles/for-beginners/url-rewriting-for-beginners/
+
+# Handle requests for "color/<hexcode>"
+RewriteRule  ^color/([0-9a-fA-F]{6})/?$  svg.php?hex=$1  [NC,L]
